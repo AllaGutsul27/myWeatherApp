@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded">
+      <div class="weather-app">
+        <div class="row weather-header">
+          <div class="col-md-4 weather-header-img">
+            <img src="/images/sun1.png" alt="" width="200px" />
+          </div>
+          <div class="col-md-8 weather-header-time">
+            <h4 class="current-time"></h4>
+            <form id="form-search">  
+              <div class="row">
+                <div class="col-6 form-search">
+                  <input type="text" id="input-search" class="form-control" placeholder="Enter a city"/>
+                </div>
+                <div class="col-3 form-search">
+                  <input type="submit" value="Search" id="search" class="btn btn-primary">
+                </div>
+                <div class="col-3 form-search">
+                  <button id="current" type="submit" class="btn btn-success">Current</button>
+                </div>
+              </div>
+            
+              
+            </form>
+          </div>
+        </div>
+
+
+
+        
+        <div class="row weather-main">
+          <div class="col-md-4">
+            <h1 class="search-city"></h1>
+            <span class="search-degrees"></span> <a class="celsius" href="#">°C</a>  <span>|</span> <a class="fahrenheit" href="#">°F</a> </span>
+          </div>
+
+          <div class="col-md-8" style="padding: 20px">
+            <p class="humidity">Humidity: <span class="humidity-value"></span> %</p>
+            <p class="wind">Wind: <span class="wind-value"></span> m/s</p>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="row weather-card">
+          <div class="col">
+            <p class="weather-card-title">Monday</p>
+            <p class="weather-degrees">10°C</p>
+            <img
+              src="/images/icons/—Pngtree—simple linear ui weather seri3es_5767402_cr.png"
+              alt=""
+              width="60px"
+            />
+          </div>
+          <div class="col">
+            <p class="weather-card-title">Tuesday</p>
+            <p class="weather-degrees">15°C</p>
+            <img
+              src="/images/icons/—Pngtree—simple linear ui weather seri3es_5767402_cr.png"
+              alt=""
+              width="60px"
+            />
+          </div>
+          <div class="col">
+            <p class="weather-card-title">Wednesday</p>
+            <p class="weather-degrees">20°C</p>
+            <img
+              src="/images/icons/—Pngtree—simple linear ui weather series_57617402_cr.png"
+              alt=""
+              width="60px"
+            />
+          </div>
+          <div class="col">
+            <p class="weather-card-title">Thursday</p>
+            <p class="weather-degrees">18°C</p>
+            <img
+              src="/images/icons/—Pngtree—simple linear ui weather seri3es_5767402_cr.png"
+              alt=""
+              width="60px"
+            />
+          </div>
+          <div class="col">
+            <p class="weather-card-title">Friday</p>
+            <p class="weather-degrees">10°C</p>
+            <img
+              src="/images/icons/—Pngtree—simple linear ui weather series_5767402_cr.png"
+              alt=""
+              width="60px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/script/script.js"></script>
+  </body>
+</html>

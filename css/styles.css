@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background: linear-gradient(0deg, rgba(255,228,170,1) 0%, rgba(255,255,255,1) 49%);
+    max-width: 1000px;
+}
+
+.btn-success {
+    padding: 0;
+    margin: 0;
+}
+.weather-app {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.weather-header {
+    text-align: center;
+}
+
+.weather-header-img {
+    padding: 40px 0;
+}
+.weather-header-time {
+    padding: 40px 30px 30px 30px;
+
+}
+.current-time {
+    text-align: center;
+    font-family: cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.city {
+    margin-left: 140px;
+}
+
+.row {
+    text-align: center;
+}
+
+.weather- main {
+    margin-bottom: 40px;
+}
+.weather-card {
+    padding: 40px 0;
+}
+
+.weather-card-title {
+    font-size: 32px;
+    font-family: cursive;
+}
+
+.weather-degrees {
+    font-size: 24px;
+}
+.search-degrees {
+    font-size: 30px;
+    color: blue;
+    font-family: cursive;
+}
+.search-city {
+    color: orange;
+    font-size: 50px;
+}
+
+.celsius {
+    text-decoration: none;
+    color: blue;
+}
+
+.celsius:hover, .fahrenheit:hover {
+    color: orange;
+}
+
+.fahrenheit {
+    text-decoration: none;
+    color: blue;
+} 
+span {
+    color: blue;
+}
+
+#input-search {
+    font-family: cursive;
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.humidity {
+    font-size: 24px;
+    color: olivedrab;
+    font-weight: bold;
+}
+
+.wind {
+    font-size: 24px;
+    color: olivedrab;
+    font-weight: bold;
+}
