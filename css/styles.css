@@ -14,7 +14,6 @@ body {
 .weather-app {
     max-width: 1000px;
     margin: 0 auto;
-    border: 1px solid black;
 }
 .weather-header {
     text-align: center;
@@ -102,4 +101,10 @@ span {
     font-size: 24px;
     color: olivedrab;
     font-weight: bold;
+}
+
+.open-source {
+    text-align: center; 
+    margin: 20px auto;
+    margin-bottom: 20px;
 }
