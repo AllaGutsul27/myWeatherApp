@@ -7,8 +7,13 @@ body {
     max-width: 1000px;
 }
 
+.btn {
+    --bs-btn-padding-x: 2.3rem;
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-line-height: 28.5px;
+}
 .btn-success {
-    padding: 0;
     margin: 0;
 }
 .weather-app {
