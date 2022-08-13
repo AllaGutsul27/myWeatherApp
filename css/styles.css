@@ -9,7 +9,7 @@ body {
 }
 
 .btn {
-    --bs-btn-padding-x: 2.3rem;
+    --bs-btn-padding-x: 1.8rem;
     --bs-btn-font-family: ;
     --bs-btn-font-size: 1.3rem;
     --bs-btn-line-height: 28.5px;
