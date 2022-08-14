@@ -39,6 +39,9 @@ function showTemperature(response) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `/images/${response.data.weather[0].icon}.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    let searchCity = document.querySelector(".search-city");
+    searchCity.innerHTML = response.data.name;
 }
 
 function search(event) {
@@ -110,8 +113,7 @@ function showTemperatureFahrenheit(event) {
     celsius.classList.remove("active");
     fahrenheit.classList.add("active");
     let fahrenheitTemperature = Math.round(celsiusTemperature * 1.8 + 32);
-    degrees.innerHTML = fahrenheitTemperature;
-    
+    degrees.innerHTML = fahrenheitTemperature;    
 }
 
 let fahrenheit = document.querySelector(".fahrenheit");
@@ -132,5 +134,4 @@ celsius.addEventListener("click", showTemperatureCelsius);
 
 
 
-
-
+search(axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Chernivtsi&units=metric&appid=28b89a027ca36429077890b9084e664e`).then(showTemperature));
