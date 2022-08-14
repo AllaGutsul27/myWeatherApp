@@ -27,8 +27,9 @@ h4.innerHTML = `${hours}:${minutes}, ${day} ${month} ${date}, ${year}`;
 
 function showTemperature(response) {
     console.log(response);
+    celsiusTemperature = Math.round(response.data.main.temp);
     let degrees = document.querySelector(".search-degrees");
-    degrees.innerHTML = Math.round(response.data.main.temp);
+    degrees.innerHTML = Math.round(celsiusTemperature);
     let humidity = document.querySelector(".humidity-value");
     humidity.innerHTML = response.data.main.humidity;
     let wind = document.querySelector(".wind-value");
@@ -59,9 +60,16 @@ formSearch.addEventListener("submit", search);
 
 // //----- Температура за поточним місцем знаходження (кнопка Current) ------//
 function showTemperatureCurrent(response) {
+    let inputSearch = document.querySelector("#input-search");
+    inputSearch.value = response.data.name;
+    
     console.log(response)
+    celsiusTemperature = Math.round(response.data.main.temp); 
+
     let degrees = document.querySelector(".search-degrees");
-    degrees.innerHTML = Math.round(response.data.main.temp);
+    degrees.innerHTML = Math.round(celsiusTemperature);
+
+
     let searchCity = document.querySelector(".search-city");
     searchCity.innerHTML = response.data.name;
 
@@ -94,6 +102,33 @@ let current = document.querySelector("#current");
 current.addEventListener("click", getCurrentLocation);
     
 
+//------Unit conversion-------//
+
+function showTemperatureFahrenheit(event) {
+    event.preventDefault();
+    let degrees = document.querySelector(".search-degrees");
+    let fahrenheitTemperature = Math.round(celsiusTemperature * 1.8 + 32);
+    degrees.innerHTML = fahrenheitTemperature;
+    fahrenheit.classList.add("active");
+    celsius.classList.remove("active");
+    
+}
+
+let fahrenheit = document.querySelector(".fahrenheit");
+fahrenheit.addEventListener("click", showTemperatureFahrenheit);
+
+let celsiusTemperature;
+
+function showTemperatureCelsius(event) {
+    event.preventDefault();
+    let degrees = document.querySelector(".search-degrees");
+    degrees.innerHTML = celsiusTemperature;
+    fahrenheit.classList.remove("active");
+    celsius.classList.add("active");
+}
+
+let celsius = document.querySelector(".celsius");
+celsius.addEventListener("click", showTemperatureCelsius);
 
 
 

@@ -133,3 +133,11 @@ span {
 #description:first-letter {
     text-transform: capitalize;
 }
+
+.active {
+    cursor: default;   
+}
+
+.active:hover {
+    color: blue; 
+}
