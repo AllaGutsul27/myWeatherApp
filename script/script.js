@@ -107,10 +107,10 @@ current.addEventListener("click", getCurrentLocation);
 function showTemperatureFahrenheit(event) {
     event.preventDefault();
     let degrees = document.querySelector(".search-degrees");
+    celsius.classList.remove("active");
+    fahrenheit.classList.add("active");
     let fahrenheitTemperature = Math.round(celsiusTemperature * 1.8 + 32);
     degrees.innerHTML = fahrenheitTemperature;
-    fahrenheit.classList.add("active");
-    celsius.classList.remove("active");
     
 }
 
@@ -121,10 +121,10 @@ let celsiusTemperature;
 
 function showTemperatureCelsius(event) {
     event.preventDefault();
+    celsius.classList.add("active");
+    fahrenheit.classList.remove("active");
     let degrees = document.querySelector(".search-degrees");
     degrees.innerHTML = celsiusTemperature;
-    fahrenheit.classList.remove("active");
-    celsius.classList.add("active");
 }
 
 let celsius = document.querySelector(".celsius");
