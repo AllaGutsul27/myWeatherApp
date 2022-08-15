@@ -21,6 +21,50 @@ if (hours < 10) {
 let h4 = document.querySelector("h4");
 h4.innerHTML = `${hours}:${minutes}, ${day} ${month} ${date}, ${year}`;
       
+//---------Forecast---------/////
+
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return days[day];
+
+}
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row weather-footer">`;
+
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
+        forecastHTML =
+            forecastHTML +
+            `<div class="col-2">
+                <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="80" />
+                <div class="weather-degrees">
+                    <span class="temperature-max">${Math.round(forecastDay.temp.max)}°</span>
+                    <span class="temperature-min">${Math.round(forecastDay.temp.min)}°</span>
+                </div>
+                
+            </div>`;
+        }
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey="bd8f88829f2ceba868beb54f335a28f8";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric`;
+    console.log(apiUrl)
+    axios.get(`${apiUrl}&appid=${apiKey}`).then(displayForecast);
+
+}
+
 
 
 //----- Зміна міста (головного) і температури ------//
@@ -42,6 +86,8 @@ function showTemperature(response) {
 
     let searchCity = document.querySelector(".search-city");
     searchCity.innerHTML = response.data.name;
+
+    getForecast(response.data.coord);
 }
 
 function search(event) {
@@ -133,35 +179,6 @@ let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", showTemperatureCelsius);
 
 
-
-
-//---------Forecast---------/////
-
-function displayForecast(response) {
-    console.log(response)
-    let forecastElement = document.querySelector("#forecast");
-
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let forecastHTML = `<div class="row">`;
-
-    days.forEach(function (day) {
-        forecastHTML =
-            forecastHTML +
-            `<div class="col-2">
-                <div class="weather-forecast-date">${day}</div>
-                <div class="weather-degrees">
-                    <span class="temperature-max">18°</span>
-                    <span class="temperature-min">15°</span>
-                </div>
-                <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" />
-            </div>`;
-    });
-
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();
 
 
 

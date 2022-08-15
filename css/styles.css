@@ -56,7 +56,8 @@ margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 200px;
     
 }
 .weather-card {
@@ -69,6 +70,7 @@ margin-bottom: 40px;
 
 .weather-degrees {
     font-size: 24px;
+    margin-top: 15px;
 }
 .search-degrees {
     font-size: 30px;
@@ -120,7 +122,7 @@ span {
 
 .open-source {
     text-align: center; 
-    margin: 20px auto;
+    margin: 50px auto;
     margin-bottom: 20px;
 }
 
@@ -144,8 +146,9 @@ span {
 }
 
 .weather-forecast-date {
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 24px;
     color: orange;
     font-weight: bold;
 }
@@ -161,4 +164,9 @@ span {
     font-size: 16px;
     color: teal;
 
+}
+
+.weather-footer {
+    display: flex;
+    justify-content: center;
 }
