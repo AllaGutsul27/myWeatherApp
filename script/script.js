@@ -134,21 +134,20 @@ celsius.addEventListener("click", showTemperatureCelsius);
 
 
 
-search(axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Chernivtsi&units=metric&appid=28b89a027ca36429077890b9084e664e`).then(showTemperature));
 
+//---------Forecast---------/////
 
-
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response)
     let forecastElement = document.querySelector("#forecast");
 
-    let days = ["Monday", "Tuesday", "Wednesday"];
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let forecastHTML = `<div class="row">`;
 
     days.forEach(function (day) {
         forecastHTML =
             forecastHTML +
-            `
-            <div class="col-2">
+            `<div class="col-2">
                 <div class="weather-forecast-date">${day}</div>
                 <div class="weather-degrees">
                     <span class="temperature-max">18°</span>
@@ -160,9 +159,10 @@ function displayForecast() {
 
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
-    console.log(forecastHTML)
-    console.log(forecastElement)
 }
 
-
 displayForecast();
+
+
+
+search(axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Chernivtsi&units=metric&appid=28b89a027ca36429077890b9084e664e`).then(showTemperature));
