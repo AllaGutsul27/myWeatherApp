@@ -4,7 +4,7 @@ body {
     font-family: cursive;
 }
 .container {
-    background: linear-gradient(0deg, rgba(255,228,170,1) 0%, rgba(255,255,255,1) 49%);
+    /* background: linear-gradient(0deg, rgba(255,228,170,1) 0%, rgba(255,255,255,1) 49%); */
     max-width: 1000px;
 }
 

@@ -43,7 +43,7 @@ function displayForecast(response) {
             forecastHTML +
             `<div class="col-2">
                 <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="80" />
+                <img src="/images/${forecastDay.weather[0].icon}.png" alt="" width="100" />
                 <div class="weather-degrees">
                     <span class="temperature-max">${Math.round(forecastDay.temp.max)}°</span>
                     <span class="temperature-min">${Math.round(forecastDay.temp.min)}°</span>
@@ -52,6 +52,10 @@ function displayForecast(response) {
             </div>`;
         }
     });
+
+                // <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="80" />
+
+
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
@@ -177,9 +181,6 @@ function showTemperatureCelsius(event) {
 
 let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", showTemperatureCelsius);
-
-
-
 
 
 search(axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Chernivtsi&units=metric&appid=28b89a027ca36429077890b9084e664e`).then(showTemperature));
