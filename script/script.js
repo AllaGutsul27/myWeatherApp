@@ -135,3 +135,34 @@ celsius.addEventListener("click", showTemperatureCelsius);
 
 
 search(axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Chernivtsi&units=metric&appid=28b89a027ca36429077890b9084e664e`).then(showTemperature));
+
+
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Monday", "Tuesday", "Wednesday"];
+    let forecastHTML = `<div class="row">`;
+
+    days.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            `
+            <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-degrees">
+                    <span class="temperature-max">18°</span>
+                    <span class="temperature-min">15°</span>
+                </div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" />
+            </div>`;
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML)
+    console.log(forecastElement)
+}
+
+
+displayForecast();
