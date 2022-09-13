@@ -169,4 +169,30 @@ span {
 .weather-footer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+
+    #search,
+    #current {
+        font-size: 18px;
+        padding: 5px 15px;
+        margin: 0 5px;
+    }
+
+    #icon {
+        width: 170px;
+    }
+
+    .search-city {
+        font-size: 46px;
+    }
+
+    .weather-footer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
 }
