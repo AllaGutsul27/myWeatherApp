@@ -25,14 +25,13 @@
           <div class="col-md-8 col-sm-9 weather-header-time">
             <h4 class="current-time"></h4>
             <form id="form-search">  
-            <div class="input-group form-search" id="form-search">
-              <input id="input-search" type="text" class="form-control" placeholder="Enter a city" aria-label="Recipient's username with two button addons">
-
-              <button class="btn btn-primary" type="submit">Search</button>
-              <button id="current" class="btn btn-success" type="submit">Current</button>
+              <div class="col-lg-6 col-md-6 col-sm-6 input-group form-search" id="form-search">
+                <input id="input-search" type="text" class="form-control" placeholder="Enter a city" aria-label="Recipient's username with two button addons">
+                <button id="search" class="col-lg-3 col-md-3 col-sm-3 btn btn-primary" type="submit">Search</button>
+                <button id="current" class="col-lg-3 col-md-3 col-sm-3 btn btn-success" type="submit">Current</button>
             
             
-            </div>
+              </div>
             </form>
           </div>
 
@@ -48,7 +47,7 @@
           </div>
 
           <div class="col-md-8 col-sm-6 weather-values">
-            <p class="humidity">Humidity: <span class="humidity-value"></span> %</p><br>
+            <p class="humidity">Humidity: <span class="humidity-value"></span>%</p><br>
             <p class="wind">Wind: <span class="wind-value"></span> m/s</p>
           </div>
         </div>
