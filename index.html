@@ -19,40 +19,35 @@
     <div class="container shadow-lg p-3 mb-5 bg-body rounded">
       <div class="weather-app">
         <div class="row weather-header">
-          <div class="col-md-4 weather-header-img">
+          <div class="col-md-4 col-sm-3 weather-header-img">
             <img id="icon" src="" alt="" width="200px" />
           </div>
-          <div class="col-md-8 weather-header-time">
+          <div class="col-md-8 col-sm-9 weather-header-time">
             <h4 class="current-time"></h4>
             <form id="form-search">  
-              <div class="row">
-                <div class="col-6 form-search">
-                  <input type="text" id="input-search" class="form-control" placeholder="Enter a city"/>
-                </div>
-                <div class="col-3 form-search">
-                  <input type="submit" value="Search" id="search" class="btn btn-primary">
-                </div>
-                <div class="col-3 form-search">
-                  <button id="current" type="submit" class="btn btn-success">Current</button>
-                </div>
-              </div>
+            <div class="input-group form-search" id="form-search">
+              <input id="input-search" type="text" class="form-control" placeholder="Enter a city" aria-label="Recipient's username with two button addons">
+
+              <button class="btn btn-primary" type="submit">Search</button>
+              <button id="current" class="btn btn-success" type="submit">Current</button>
             
-              
+            
+            </div>
             </form>
           </div>
+
+
         </div>
-
-
 
         
         <div class="row weather-main">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <h1 class="search-city"></h1>
             <span class="search-degrees"></span> <a class="celsius active" href="#">°C</a>  <span>|</span> <a class="fahrenheit" href="#">°F</a> </span>
             <p id="description"></p>
           </div>
 
-          <div class="col-md-8 weather-values">
+          <div class="col-md-8 col-sm-6 weather-values">
             <p class="humidity">Humidity: <span class="humidity-value"></span> %</p><br>
             <p class="wind">Wind: <span class="wind-value"></span> m/s</p>
           </div>
@@ -61,8 +56,9 @@
 
 
 
-
+        
         <div class="weather-forecast" id="forecast"></div>
+        
 
       </div>
       <p class="open-source"> <a href="https://github.com/AllaGutsul27/weatherApp" target="_blank">Open-source code</a> by Alla Gutsul</p>

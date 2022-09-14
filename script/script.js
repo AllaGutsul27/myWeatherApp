@@ -38,12 +38,13 @@ function displayForecast(response) {
     let forecastHTML = `<div class="row weather-footer">`;
 
     forecast.forEach(function (forecastDay, index) {
+        
         if (index < 6) {
         forecastHTML =
             forecastHTML +
-            `<div class="col-2">
+            `<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 forecast-card">
                 <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                <img src="/images/${forecastDay.weather[0].icon}.png" alt="" width="100" />
+                <img class="forecast-icon" src="/images/${forecastDay.weather[0].icon}.png" alt="" />
                 <div class="weather-degrees">
                     <span class="temperature-max">${Math.round(forecastDay.temp.max)}°</span>
                     <span class="temperature-min">${Math.round(forecastDay.temp.min)}°</span>
@@ -51,7 +52,10 @@ function displayForecast(response) {
                 
             </div>`;
         }
+
     });
+
+
 
                 // <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="80" />
 
@@ -59,6 +63,7 @@ function displayForecast(response) {
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
+
 
 function getForecast(coordinates) {
     console.log(coordinates);
