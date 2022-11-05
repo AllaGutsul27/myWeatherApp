@@ -1,4 +1,4 @@
-   //----- Date ------//
+//----- Date ------//
 let now = new Date();
 
 let week = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"];
